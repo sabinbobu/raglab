@@ -1,12 +1,9 @@
 [project]
 name = "raglab"
 version = "0.1.0"
-description = "Add your description here"
+description = "RAG evaluation & experimentation platform"
 readme = "README.md"
 requires-python = ">=3.12"
-<<<<<<< Updated upstream
-dependencies = []
-=======
 dependencies = [
     "fastapi[standard]>=0.115.0",
     "pydantic>=2.10.0",
@@ -47,4 +44,3 @@ strict = true
 override-dependencies = [
     "onnxruntime<1.19.0; sys_platform == 'darwin' and platform_machine == 'x86_64'",
 ]
->>>>>>> Stashed changes
