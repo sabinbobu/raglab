@@ -1,18 +1,20 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-from raglab.gateway import LLMResonse
-from raglab.gateway.factory import get_provider
 from raglab.config import settings
+from raglab.gateway import LLMResponse
+from raglab.gateway.factory import get_provider
 
 app = FastAPI(title="RAGLab")
 
 
 class GenerateRequest(BaseModel):
-    provider: str 
+    provider: str
     model: str = settings.default_model
-    prompt: str 
+    prompt: str
 
-@app.post("/generate", response_model=LLMResonse)
-def generate(request: GenerateRequest) -> LLMResonse:
-    raise NotImplementedError
+
+@app.post("/generate", response_model=LLMResponse)
+def generate(request: GenerateRequest) -> LLMResponse:
+    provider = get_provider(request.provider)
+    return provider.generate(request.prompt, request.model)

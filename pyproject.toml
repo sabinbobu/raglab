@@ -20,7 +20,7 @@ raglab = "raglab.cli:app"
 
 [build-system]
 requires = ["setuptools>=75.0", "wheel"]
-build-backend = "setuptools.backends.legacy:build"
+build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -36,3 +36,9 @@ select = ["E", "F", "I"]
 python_version = "3.12"
 mypy_path = "src"
 strict = true
+
+[tool.uv]
+# onnxruntime dropped Intel Mac wheels after 1.18.x; pin to last compatible version on x86_64
+override-dependencies = [
+    "onnxruntime<1.19.0; sys_platform == 'darwin' and platform_machine == 'x86_64'",
+]

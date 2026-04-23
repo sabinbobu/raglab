@@ -17,6 +17,8 @@ class Settings(BaseSettings):
     openai_api_key: str
     anthropic_api_key: str
     default_model: str = "gpt-4o-mini"
+    default_embed_model: str = "text-embedding-3-small"
+    chroma_persist_dir: str = "./.chroma"
     log_level: str = "INFO"
 
 # Singleton — import this everywhere, don't create new instances
