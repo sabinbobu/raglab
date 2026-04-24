@@ -4,4 +4,47 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
+<<<<<<< Updated upstream
 dependencies = []
+=======
+dependencies = [
+    "fastapi[standard]>=0.115.0",
+    "pydantic>=2.10.0",
+    "pydantic-settings>=2.7.0",
+    "openai>=1.58.0",
+    "anthropic>=0.42.0",
+    "chromadb>=0.6.0",
+    "ragas>=0.2.0",
+    "httpx>=0.28.0",
+    "pypdf>=6.10.2",
+    "typer>=0.24.2",
+]
+
+[project.scripts]
+raglab = "raglab.cli:app"
+
+[build-system]
+requires = ["setuptools>=75.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 88
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.mypy]
+python_version = "3.12"
+mypy_path = "src"
+strict = true
+
+[tool.uv]
+# onnxruntime dropped Intel Mac wheels after 1.18.x; pin to last compatible version on x86_64
+override-dependencies = [
+    "onnxruntime<1.19.0; sys_platform == 'darwin' and platform_machine == 'x86_64'",
+]
+>>>>>>> Stashed changes
