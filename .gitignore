@@ -11,3 +11,4 @@ wheels/
 
 # Local secrets — never commit real credentials
 .env
+.chroma
