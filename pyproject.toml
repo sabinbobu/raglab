@@ -13,8 +13,7 @@ dependencies = [
     "chromadb>=0.6.0",
     "ragas>=0.2.0",
     "httpx>=0.28.0",
-    "pypdf>=6.10.2",
-    "typer>=0.24.2",
+
 ]
 
 [project.scripts]
@@ -43,4 +42,3 @@ strict = true
 # onnxruntime dropped Intel Mac wheels after 1.18.x; pin to last compatible version on x86_64
 override-dependencies = [
     "onnxruntime<1.19.0; sys_platform == 'darwin' and platform_machine == 'x86_64'",
-]
