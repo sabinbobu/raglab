@@ -27,4 +27,4 @@ on a corpus (sample), outputs scorecards with faithfulness/cost/latency.
 - `uv run pytest` — tests
 - `uv run ruff check . && uv run mypy src` — lint + types
 - `uv run raglab ingest data/bmw/` — ingestion CLI
-- `uv run uvicorn raglab.main:app --reload` — dev server
+- `uv run uvicorn main:app --reload` — dev server
