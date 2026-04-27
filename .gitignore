@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env
+
+# ChromaDB
+.chroma/
+
+# Data corpus
+data/sample/*
+!data/sample/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+
+# uv
+.python-version
