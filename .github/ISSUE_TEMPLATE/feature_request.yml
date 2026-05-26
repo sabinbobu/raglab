@@ -1,0 +1,52 @@
+name: Feature Request
+description: Propose an improvement or new capability
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Got an idea? Describe what you'd like to add or change.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which area does this feature belong to?
+      options:
+        - New LLM provider
+        - New retrieval strategy
+        - New evaluation metric
+        - Ingestion pipeline
+        - API / endpoints
+        - CLI
+        - Observability / tracing
+        - Docker / infra
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe the gap or limitation you're hitting.
+      placeholder: "There's no way to evaluate precision@k — only faithfulness is tracked."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: Describe what you'd like to happen.
+      placeholder: "Add a `precision_at_k` metric to the Scorecard and wire it into evaluate_experiment()."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any other approaches you've thought about?
+    validations:
+      required: false

@@ -1,5 +1,7 @@
 # RAGLab
 
+[![AI Ready](https://img.shields.io/badge/AI--Ready-yes-brightgreen?style=flat)](https://github.com/johnpapa/ai-ready)
+
 RAG evaluation platform that compares LLMs, retrieval strategies, and prompt versions side-by-side — with faithfulness, cost, and latency scorecards.
 
 **RAGLab** — answers one question: which combination of LLM, retriever, and prompt actually performs best?
@@ -103,3 +105,13 @@ curl -X POST "http://localhost:8000/experiments/evaluate?experiment_id=<id>"
 - **Eval:** Ragas faithfulness metric
 - **Infra:** Docker · GitHub Actions CI
 - **Dev:** uv · ruff · mypy · pytest · pre-commit
+
+## Contributing
+
+1. Fork the repo and create a branch: `git checkout -b feat/your-feature`
+2. Install dependencies: `uv sync --group dev`
+3. Make your changes — see `AGENTS.md` for architecture and conventions
+4. Run the checks: `uv run pytest && uv run ruff check . && uv run mypy src`
+5. Open a PR — the template will guide you through the checklist
+
+See `AGENTS.md` for a full breakdown of the codebase, how to add a new LLM provider or retriever, and the maintenance matrix.
